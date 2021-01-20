@@ -1,0 +1,13 @@
+C:\Users\garim\OneDrive\Desktop\NagarroTraining\bin\Debug\netcoreapp3.1\NagarroTraining.exe
+C:\Users\garim\OneDrive\Desktop\NagarroTraining\bin\Debug\netcoreapp3.1\NagarroTraining.deps.json
+C:\Users\garim\OneDrive\Desktop\NagarroTraining\bin\Debug\netcoreapp3.1\NagarroTraining.runtimeconfig.json
+C:\Users\garim\OneDrive\Desktop\NagarroTraining\bin\Debug\netcoreapp3.1\NagarroTraining.runtimeconfig.dev.json
+C:\Users\garim\OneDrive\Desktop\NagarroTraining\bin\Debug\netcoreapp3.1\NagarroTraining.dll
+C:\Users\garim\OneDrive\Desktop\NagarroTraining\bin\Debug\netcoreapp3.1\NagarroTraining.pdb
+C:\Users\garim\OneDrive\Desktop\NagarroTraining\obj\Debug\netcoreapp3.1\NagarroTraining.csprojAssemblyReference.cache
+C:\Users\garim\OneDrive\Desktop\NagarroTraining\obj\Debug\netcoreapp3.1\NagarroTraining.AssemblyInfoInputs.cache
+C:\Users\garim\OneDrive\Desktop\NagarroTraining\obj\Debug\netcoreapp3.1\NagarroTraining.AssemblyInfo.cs
+C:\Users\garim\OneDrive\Desktop\NagarroTraining\obj\Debug\netcoreapp3.1\NagarroTraining.csproj.CoreCompileInputs.cache
+C:\Users\garim\OneDrive\Desktop\NagarroTraining\obj\Debug\netcoreapp3.1\NagarroTraining.dll
+C:\Users\garim\OneDrive\Desktop\NagarroTraining\obj\Debug\netcoreapp3.1\NagarroTraining.pdb
+C:\Users\garim\OneDrive\Desktop\NagarroTraining\obj\Debug\netcoreapp3.1\NagarroTraining.genruntimeconfig.cache
