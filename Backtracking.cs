@@ -7,12 +7,26 @@ namespace Backtracking
         static void main(string[] args)
         {
 
-            int[,] maze = {{0,1,0,0},{0,0,0,0},{0,1,0,0},{0,0,1,0}} ;
+            // int[,] maze = {{0,1,0,0},{0,0,0,0},{0,1,0,0},{0,0,1,0}} ;
 
-            bool[,] visited = new bool[maze.GetLength(0), maze.GetLength(1)] ;
+            // bool[,] visited = new bool[maze.GetLength(0), maze.GetLength(1)] ;
 
-            BlockedMaze(maze, 0, 0, maze.GetLength(0)-1, maze.GetLength(1)-1 , visited, "") ; 
+            // BlockedMaze(maze, 0, 0, maze.GetLength(0)-1, maze.GetLength(1)-1 , visited, "") ; 
 
+            int[,] grid =
+            {
+                { 3, 0, 0 ,0 ,7 ,0 ,0 ,0 ,0 } ,
+                { 6, 0, 0, 1, 9, 5, 0, 0, 0 } ,
+                { 0, 9, 8 ,0 ,0 ,0 ,0 ,6 ,0 } ,
+                { 8, 0, 0, 0, 6, 0, 0, 0, 3 } ,
+                { 4, 0, 0 ,8 ,0 ,3 ,0 ,0 ,1 } ,
+                { 7, 0, 0, 0, 2, 0 ,0 ,0 ,6 } ,
+                { 0, 6, 0, 0 ,0 ,0 ,2 ,8 ,0 } ,
+                { 0, 0, 0, 4 ,1 ,9, 0 ,0 ,5 } ,
+                { 0, 0, 0 ,0 ,8 ,0 ,0 ,7, 9 }
+            };
+
+            Sudoku(grid, 0, 0, grid.GetLength(0)-1 , grid.GetLength(1)-1) ;
         }
 
         static void BlockedMaze(int[,] maze , int cr , int cc , int er , int ec , bool[,] visited, String ans)
@@ -91,6 +105,19 @@ namespace Backtracking
             }
 
             // 3*3 grid
+            int sr = row - row % 3 ;
+            int sc = col - col % 3 ;
+
+            for(int r = sr ; r < sr + 3 ; r++)
+            {
+                for(int c = sc ; c < sc + 3 ; c++)
+                {
+                    if(grid[r,c] == val)
+                        return false ;
+                }
+            }
+
+            return true ;
             
         }
 
