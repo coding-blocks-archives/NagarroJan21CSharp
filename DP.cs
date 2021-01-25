@@ -1,10 +1,10 @@
 using System ;
 
-namespace Dp
+namespace DP
 {
     class DPQuestions
     {
-        static void Main(string[] args)
+        static void main(string[] args)
         {
             int n = 10 ;
             // Console.WriteLine(Fib(n)) ;
