@@ -5,7 +5,7 @@ namespace QueueDS
 {
     class QueueQs
     {
-        static void Main(string[] args)
+        static void main(string[] args)
         {
             int[] arr = {10,-1,-8,6,30,40,50, 60} ;
 
