@@ -21,7 +21,7 @@ namespace BTDS
 
         Node root ;
         
-        public void createBT()
+        public void CreateBT()
         {
             Queue<Node> q = new Queue<Node>() ;
 
@@ -55,12 +55,12 @@ namespace BTDS
 
         }
 
-        public void display()
+        public void Display()
         {
-            display(root) ;
+            Display(root) ;
         }
 
-        private void display(Node node) // 1k
+        private void Display(Node node) // 1k
         {
             if(node == null)
                 return ;
@@ -81,8 +81,126 @@ namespace BTDS
 
             Console.WriteLine(str) ;
 
-            display(node.left) ; // 2k
-            display(node.right) ; // 3k
+            Display(node.left) ; // 2k
+            Display(node.right) ; // 3k
+        }
+
+        public int Ht()
+        {
+            return Ht(root) ;
+        }
+
+        private int Ht(Node node)
+        {
+            if(node == null)
+                return -1 ;
+          
+            int lh = Ht(node.left) ;
+            int rh = Ht(node.right) ;
+
+            int sp = Math.Max(lh, rh) ;
+
+            return sp + 1 ;
+
+        }
+
+        public bool IsBalanced()
+        {
+            return IsBalanced(root) ;
+        }
+
+        private bool IsBalanced(Node node)
+        {
+            if(node == null)
+                return true;
+
+            bool lb = IsBalanced(node.left) ;
+            bool rb = IsBalanced(node.right) ;
+
+            int bf = Ht(node.left) - Ht(node.right) ;
+
+            if(lb && rb && (bf == -1 || bf == 0 || bf == 1))
+                return true ;
+            else
+                return false ;
+
+        }
+
+        public bool FlipEquivalent(BinaryTree other)
+        {
+            return FlipEquivalent(this.root, other.root) ;
+        }
+
+        private bool FlipEquivalent(Node t , Node o)
+        {
+            if(t == null && o == null)
+                return true ;
+            
+            if(t == null || o == null)
+                return false ;
+                
+            if(t.data != o.data)
+                return false ;
+
+            bool flip = FlipEquivalent(t.left , o.right) && FlipEquivalent(t.right, o.left) ;
+
+            // if(flip)
+            //     return true ;
+
+            bool flipno = FlipEquivalent(t.left,o.left) && FlipEquivalent(t.right, o.right) ;
+
+            return flip || flipno ;
+        }
+
+        public int Max()
+        {
+           return Max(root) ;
+        }
+
+        private int Max(Node node)
+        {
+            if(node == null)
+                return Int32.MinValue ;
+
+            int lm = Max(node.left) ;
+            int rm = Max(node.right) ;
+
+            return Math.Max(node.data , Math.Max(lm,rm)) ;
+        }
+
+        public int Min()
+        {
+           return Min(root) ;
+        }
+
+        private int Min(Node node)
+        {
+            if(node == null)
+                return Int32.MaxValue ;
+
+            int lm = Min(node.left) ;
+            int rm = Min(node.right) ;
+
+            return Math.Min(node.data , Math.Min(lm,rm)) ;
+        }
+
+        public bool IsBST()
+        {
+            return IsBST(root) ;
+        }
+
+        private bool IsBST(Node node)
+        {
+            if(node == null)
+                return true ;
+
+            bool lb = IsBST(node.left) ;
+            bool rb = IsBST(node.right) ;
+
+            if(lb && rb && node.data > Max(node.left) && node.data < Min(node.right))
+                return true ;
+            else
+                return false ;
         }
 
 
@@ -90,11 +208,19 @@ namespace BTDS
 
     public class Client
     {
-        public static void Main(string[] args)
+        public static void main(string[] args)
         {
             BinaryTree bt = new BinaryTree ();
-            bt.createBT() ;
-            bt.display() ;
+            // BinaryTree bt1 = new BinaryTree ();
+         
+            bt.CreateBT() ;
+            // bt1.CreateBT() ;
+          
+            //bt.Display() ;
+            
+            // Console.WriteLine(bt.FlipEquivalent(bt1)) ;
+
+            Console.WriteLine(bt.IsBST()) ; 
         }
     }
 }
